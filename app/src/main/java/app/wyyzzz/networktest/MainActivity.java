@@ -28,6 +28,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
+
 import javax.xml.parsers.SAXParserFactory;
 
 import okhttp3.OkHttpClient;
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }).start();
     }
 
-    private void sendRequestWithHttpURLConnection(){
+    /*private void sendRequestWithHttpURLConnection(){
         //开启线程来发起网络请求
         new Thread(new Runnable() {
             @Override
@@ -121,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 responseText.setText(response);
             }
         });
-    }
+    }*/
 
     private void parseXMLWithPull(String xmlData){
         try{
@@ -199,11 +200,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void parseJSONWithGSON(String jsonData){
         Gson gson = new Gson();
-        List<App> appList = gson.fromJson(jsonData,new TypeToken<List<App>>(){}.getType());
+        List<App> appList = gson.fromJson(jsonData, new TypeToken<List<App>>(){}.getType());
         for(App app : appList){
             Log.d("MainActivity","id is " + app.getId());
-            Log.d("MainActivity","name is " + app.getName());
             Log.d("MainActivity","version is " + app.getVersion());
+            Log.d("MainActivity","name is " + app.getName());
         }
     }
 }

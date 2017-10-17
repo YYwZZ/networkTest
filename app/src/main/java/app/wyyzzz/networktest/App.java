@@ -8,9 +8,9 @@ public class App {
 
     private String id;
 
-    private String name;
-
     private String version;
+
+    private String name;
 
     public String getId() {
         return id;
